@@ -199,7 +199,7 @@ where OPP_START_DATE < CREATED_DATE;
 ## File index
 
     sql/
-      00_prereqs.sql
+      000_prereqs.sql
       001_stg_leads.sql
       002_stg_opportunities.sql
       003_stg_expenses_advertising.sql
@@ -220,6 +220,7 @@ where OPP_START_DATE < CREATED_DATE;
       35_mart_h1_spend_cac.sql
       36_mart_cac_ltv.sql
       99_qa_checks.sql
+      clean_str_array.sql
 
     assets/
       Owner_GTM_H1_2024_Executive_Readout_v2.pdf
@@ -241,4 +242,4 @@ where OPP_START_DATE < CREATED_DATE;
 
 *   **No raw data** is stored in this repo.
 *   No credentials, secrets, or private account details are included.
-*   Object names can be parameterized if needed; adjust in `00_prereqs.sql`.
+*   Object names can be parameterized if needed; adjust in `000_prereqs.sql`.
