@@ -27,7 +27,6 @@ This repo shows how to turn raw case extracts into **trustworthy, self‑serve G
 *   **`/sql`** – runnable Snowflake SQL, organized by dependency:
     *  STG1, (initial staging) STG2 (typed staging), DIM/FACT (conformed), MART (business‑ready), Views (H1, CAC/LTV), QA checks
 *   **`/assets`** – *Executive Readout PDF* + dashboard screenshot
-*   **`/docs`** – short lineage and a metrics glossary (optional but recommended)
 
 
 ***
