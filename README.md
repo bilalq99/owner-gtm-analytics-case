@@ -31,6 +31,27 @@ This repo shows how to turn raw case extracts into **trustworthy, self‑serve G
 
 ***
 
+## Why this data model is SSOT & Scalable
+This project is designed as a Single Source of Truth (SSOT) for GTM analytics at Owner.com and to scale as GTM volume increases.
+SSOT by design
+
+**Conformed core:** All raw inputs are standardized into conformed dimensions & facts (DIM_CHANNEL, DIM_REASON, FACT_LEAD, FACT_OPPORTUNITY, FACT_GTM_SPEND) before any metrics are computed. This ensures Sales, RevOps, Marketing, and Finance see one version of reality.
+**Centralized metric logic:** Funnel rules (e.g., Demos Set, Demos Held), lifecycle dates, and win/loss definitions live in the MART layer and views, not in downstream BI. This prevents metric drift across tools.
+**Shared CAC/LTV:** CAC and LTV are computed from the same conformed sources, so leadership and execution teams align on efficiency.
+**Model‑level guardrails:** Constraints like Held ≤ Set, lifecycle sanity checks, and reason‑group mapping are enforced in the model, not left to downstream consumers.
+
+**Scalable Snowflake architecture**
+
+Separation of concerns: STG1 → STG2 → DIM/FACT → MART → Views gives each layer a clear contract and allows scaling or refactoring without breaking upstream/downstream logic.
+Extensible mappings: DIM_CHANNEL and DIM_REASON are data‑driven mapping tables. Adding new channels/UTMs or reason codes requires adds, not rewrites.
+Fact tables built for volume: FACT_* tables support multi‑year growth (millions of leads, longer opp lifecycles, expanded spend categories).
+Composable marts: Current marts (funnel, CAC/LTV) can be extended to rep productivity, pipeline velocity, forecasting, marketing attribution, and payback without restructuring the core.
+BI‑agnostic: Because business logic is in Snowflake, any BI (Snowflake dashboards, Sigma, Tableau, Looker, notebooks) can consume the same governed metrics.
+QA‑first: Automated checks guarantee metric stability as data volume and team size grow.
+
+
+***
+
 ## Prerequisites
 
 *   A Snowflake account and a role with permission to `CREATE TABLE/VIEW` in your target **database/schema**
