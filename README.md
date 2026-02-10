@@ -50,7 +50,7 @@ In Snowflake **Worksheets**, run the files in this order:
 sql/000_prereqs.sql
 -- (Sets USE DATABASE/SCHEMA and H1’24 window variables)
 
--- 1) Initial staging (STG1)
+-- 1) Initial staging to clean arrays, date formatting, and number formatting (STG1)
 sql/001_stg_leads.sql
 sql/002_stg_opportunities.sql
 sql/003_stg_expenses_advertising.sql
