@@ -1,7 +1,7 @@
 ***
 # Owner.com — GTM Analytics Case (Snowflake-first)
 
-Snowflake‑first data modeling for the Owner.com GTM case: **typed staging (STG2)** → **conformed DIM/FACT** → **business marts** → **H1’24 CAC/LTV & funnel views** → **executive readout PDF**.
+Snowflake‑first data modeling for the Owner.com GTM case: **raw data** → **initial staging (STG)** → **typed staging (STG2)** → **conformed DIM/FACT** → **business marts** → **H1’24 CAC/LTV & funnel views** → **executive readout PDF**.
 
 This repo shows how to turn raw case extracts into **trustworthy, self‑serve GTM metrics** (funnel, wins/losses, CAC/LTV) with a few clear business rules and data‑quality guard rails.
 
@@ -26,7 +26,7 @@ This repo shows how to turn raw case extracts into **trustworthy, self‑serve G
 
 *   **`/sql`** – runnable Snowflake SQL, organized by dependency:
     *  STG1, (initial staging) STG2 (typed staging), DIM/FACT (conformed), MART (business‑ready), Views (H1, CAC/LTV), QA checks
-*   **`/assets`** – *Executive Readout PDF* + dashboard screenshot
+*   **`/assets`** – *Executive Readout PDF*
 
 
 ***
@@ -85,7 +85,6 @@ sql/35_mart_h1_spend_cac.sql
 sql/99_qa_checks.sql
 ```
 
-Open **Snowsight** → point visuals to the `MART_*` objects.
 
 ***
 
