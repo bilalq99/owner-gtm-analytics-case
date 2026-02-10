@@ -1,5 +1,5 @@
 ***
-# Owner.com — GTM Analytics Case (Snowflake-first)
+# Owner.com — GTM Analytics Case
 
 Snowflake‑first data modeling for the Owner.com GTM case: **raw data** → **initial staging (STG)** → **typed staging (STG2)** → **conformed DIM/FACT** → **business marts** → **H1’24 CAC/LTV & funnel views** → **executive readout PDF**.
 
