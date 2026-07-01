@@ -1,0 +1,9 @@
+# Core (paper trading + live)
+requests>=2.31
+PyYAML>=6.0
+
+# Live trading only (Solana signing/submission). Paper mode does NOT need these.
+# Install with:  pip install -r requirements.txt  AND  pip install '.[live]'
+# or just:       pip install solders solana
+solders>=0.21 ; extra == "live"
+solana>=0.34 ; extra == "live"
